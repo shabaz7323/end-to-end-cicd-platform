@@ -1,0 +1,7 @@
+Minimal local setup notes:
+1. Install Docker, kubectl, helm, and an available Kubernetes cluster (minikube/kind or cloud).
+2. Build image: docker build -t myregistry.example.com/myapp:dev .
+3. Push image to registry and update charts/myapp/values.yaml image.tag
+4. helm upgrade --install myapp charts/myapp -n dev --create-namespace
+5. (Optional) Install ArgoCD and apply argocd/myapp-application.yaml after pushing this repo to a remote.
+6. Replace placeholders in jenkins/Jenkinsfile to enable docker push and helm deploy.

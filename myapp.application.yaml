@@ -5,32 +5,8 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/shabaz7323/my-gitops.git   # your GitOps repo
-    targetRevision: HEAD
-    path: app       # folder where deployment/service YAML exists
-
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: default
-
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-
-    syncOptions:
-      - CreateNamespace=true
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: myapp
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL:  https://github.com/shabaz7323/end-to-end-cicd-platform.git
+    repoURL: https://github.com/shabaz7323/my-gitops.git
     targetRevision: HEAD
     path: app
   destination:
@@ -40,5 +16,3 @@ spec:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true

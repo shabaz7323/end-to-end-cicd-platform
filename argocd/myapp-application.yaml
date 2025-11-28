@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: charts/myapp
-    repoURL: 'https://example.com/your-git-repo.git'
+    repoURL: https://github.com/shabaz7323/end-to-end-cicd-platform.git
     targetRevision: HEAD
   syncPolicy:
     automated:
